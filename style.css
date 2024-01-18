@@ -32,10 +32,24 @@
     margin: 0 25px;
 }
 .items-list li a {
+    position: relative;
     color: #FFF5F2;
     list-style: none;
     font-size:16px;
     text-decoration: none;
+}
+.items-list a:after{
+    content:"";
+    position: absolute;
+    background-color: #FFF5F2;
+    height:2px;
+    width:0;
+    left:0;
+    bottom: -10px;
+    transition: 0.3s;
+}
+.items-list a:hover:after{
+    width: 100%;
 }
 .home-container{
     background-color: #ECE6D3;
