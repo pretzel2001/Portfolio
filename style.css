@@ -13,11 +13,11 @@
 .navbar {
   background-color: var(--background);
   color: var(--text);
-  border-radius: 0 0 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 0 15px;
+  border-bottom: rgba(7, 9, 20,0.1) solid 2px;
   overflow: hidden;
   top: 0;
   width: 100%;
@@ -51,7 +51,7 @@
 .items-list a:after {
   content: "";
   position: absolute;
-  background-color: var(--background);
+  background-color: var(--text);
   height: 2px;
   width: 0;
   left: 0;
@@ -106,6 +106,7 @@
   color: var(--text);
   box-shadow: 10px 5px 5px gray;
   padding: 50px;
+  transition: none;
 }
 .about-info h4 {
   text-align: center;
@@ -116,6 +117,21 @@
   line-height: 23px;
   text-align: justify;
 }
+
+.about-info.fadeInLeft {
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .cv-download {
   display: flex;
   align-items: center;
