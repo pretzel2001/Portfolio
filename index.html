@@ -19,6 +19,7 @@
           ><p>Anannya</p>
           <p>Preeta</p></label>
         <ul class="items-list" id="navitem">
+          <span><img src="pictures/Exit-button-icon-png-1-removebg-preview.png" alt="exit-button"></span><br>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#">Project</a></li>
@@ -37,7 +38,7 @@
         <p class="prof">Web Developer | Photographer | Content Creator</p>
       </div>
       <div class="myPicture">
-        <img src="/pictures/me2.jpg" alt="" />
+        <img src="pictures/me2.jpg" alt="" />
       </div>
     </div>
     <div class="about-container" id="about">
@@ -69,14 +70,15 @@ document.addEventListener("DOMContentLoaded", function () {
     var aboutInfo = document.getElementById("aboutInfo");
     var sidebar = document.getElementById("navitem");
     var hamburger = document.querySelector(".hamburger");
+    var exitButton = document.querySelector(".navbar #navitem span");
 
     function toggleNavItems() {
-      if (sidebar.style.display === "none" || sidebar.style.display === "") {
-        sidebar.style.display = "block";
-      } else {
-        sidebar.style.display = "none";
-      }
+    if (sidebar.style.display === "none" || sidebar.style.display === "") {
+      sidebar.style.display = "block";
+    } else {
+      sidebar.style.display = "none";
     }
+  }
     function isElementInViewport(el) {
       var rect = el.getBoundingClientRect();
       return (
@@ -106,6 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function closeSidebar() {
     sidebar.style.width = "0";
     sidebar.style.right = "-250px"; 
+    sidebar.style.display = "none";
   }
   var options = {
     root: null, 
@@ -117,6 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(aboutInfo);
 
     hamburger.addEventListener("click", toggleNavItems);
+    exitButton.addEventListener("click", closeSidebar);
+    hamburger.addEventListener("click", openSidebar);
 });
 
     </script>
